@@ -31,6 +31,7 @@ struct HomeContainerPage: View {
 				await vm.refreshAllTours()
 			}
 		)
+		.customAlertInfo($vm.activeAlert)
 	}
 	
 }
