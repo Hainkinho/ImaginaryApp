@@ -12,6 +12,8 @@ import SwiftUI
 struct HomeContainerPage: View {
 	
 	@StateObject var vm: HomePageViewModel
+	let listButtonConfig: HomePageListButtonConfig
+	let tappedOnCell: (Tour) -> Void
 	
 	var activeItemsFilterBinding: Binding<HomePageItemsFilter> {
 		Binding(
@@ -23,7 +25,8 @@ struct HomeContainerPage: View {
 	var body: some View {
 		HomePage(
 			tours: vm.activeTours,
-			activeItemsFilter: activeItemsFilterBinding
+			activeItemsFilter: activeItemsFilterBinding,
+			listButtonConfig: listButtonConfig
 		)
 	}
 	

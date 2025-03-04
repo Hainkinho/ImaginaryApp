@@ -38,11 +38,19 @@ extension View {
 	}
 }
 
+enum HomePageListButtonConfig {
+	case NavigationLink
+	case Button(action: (TourID) -> Void)
+}
 
 struct HomePage: View {
 	
 	let tours: [Tour]
 	@Binding var activeItemsFilter: HomePageItemsFilter
+	
+	let listButtonConfig: HomePageListButtonConfig
+	
+//	let tappedOnCell: (Tour) -> Void
 	
 	var body: some View {
 		VStack(spacing: 0) {
@@ -52,14 +60,29 @@ struct HomePage: View {
 			
 			List {
 				ForEach(tours) { tour in
-					Button(action: {}) {
-						HomeListCell(
-							title: tour.title,
-							description: tour.shortDescription,
-							imageURL: tour.snapshotImageURL,
-							endDate: tour.endDate,
-							localizedPrice: tour.price.description // TODO: 
-						)
+					switch listButtonConfig {
+					case .NavigationLink:
+						NavigationLink(value: tour.id) {
+							HomeListCell(
+								title: tour.title,
+								description: tour.shortDescription,
+								imageURL: tour.snapshotImageURL,
+								endDate: tour.endDate,
+								localizedPrice: tour.price.description // TODO:
+							)
+						}
+					case .Button(let action):
+						Button(action: {
+							action(tour.id)
+						}) {
+							HomeListCell(
+								title: tour.title,
+								description: tour.shortDescription,
+								imageURL: tour.snapshotImageURL,
+								endDate: tour.endDate,
+								localizedPrice: tour.price.description // TODO:
+							)
+						}
 					}
 				}
 			}
@@ -105,6 +128,7 @@ struct HomePage: View {
 #Preview {
 	HomePage(
 		tours: (0 ... 100).map { Tour.createExample(withID: "\($0)") },
-		activeItemsFilter: .constant(.None)
+		activeItemsFilter: .constant(.None),
+		listButtonConfig: .NavigationLink
 	)
 }

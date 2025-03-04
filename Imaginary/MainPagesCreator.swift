@@ -12,14 +12,33 @@ import Foundation
 struct MainPagesCreator {
 	
 	let appStateStore: AppStateStore
+	let homeNavigationRouter: HomeNavigationRouter
 	
-	func createHomePage() -> HomeContainerPage {
+	
+	func createAdaptiveHomeNavigationLayout() -> AdaptiveHomeNavigationLayout {
+		AdaptiveHomeNavigationLayout(
+			homeNavigationRouter: homeNavigationRouter,
+			createHomePage: { listButtonConfig in
+				self.createHomePage(listButtonConfig: listButtonConfig)
+			}, createDetailsPage: { tourID in
+				self.createDetailsPage(forTourID: tourID)
+			}
+		)
+	}
+	
+	func createHomePage(listButtonConfig: HomePageListButtonConfig) -> HomeContainerPage {
 		let vm = HomePageViewModel()
 		
 		vm.subcribe(appStatePublisher: appStateStore.appStateDidChangePublisher)
 		vm.update(withNewAppState: appStateStore.curAppState)
 		
-		return HomeContainerPage(vm: vm)
+		return HomeContainerPage(
+			vm: vm,
+			listButtonConfig: listButtonConfig,
+			tappedOnCell: { tour in
+				homeNavigationRouter.showTourDetails(forTourID: tour.id)
+			}
+		)
 	}
 	
 	

@@ -9,30 +9,54 @@
 
 import SwiftUI
 
+class HomeNavigationRouter: ObservableObject {
+	
+	@Published var selectedTourID: TourID?
+	
+	func showTourDetails(forTourID tourID: TourID ) {
+		self.selectedTourID = tourID
+	}
+}
+
 struct AdaptiveHomeNavigationLayout: View {
 	
 	@Environment(\.horizontalSizeClass) private var sizeClass
 	
-	let createHomePage: () -> HomeContainerPage
+	@StateObject var homeNavigationRouter: HomeNavigationRouter
+	
+	let createHomePage: (HomePageListButtonConfig) -> HomeContainerPage
+	let createDetailsPage: (TourID) -> DetailsPage
 	
 	var body: some View {
 		if sizeClass == .compact {
 			NavigationStack {
-				createHomePage()
+				createHomePage(.NavigationLink)
 					.navigationBarTitleDisplayMode(.inline)
 					.setupHomePageNavbar(tappedMoreButton: {
 						// TODO: Add logic here. The assignment doesn't specify details, so this needs clarification.
 					})
+					.navigationDestination(for: TourID.self) { tourID in
+						createDetailsPage(tourID)
+					}
+//					.navigationDestination(item: $homeNavigationRouter.selectedTourID) { tourID in
+//						createDetailsPage(tourID)
+//					}
 			}
 		} else {
 			NavigationStack {
 				HStack(spacing: 0) {
-					createHomePage()
+					createHomePage(.Button(action: { tourID in
+						homeNavigationRouter.showTourDetails(forTourID: tourID)
+					}))
 					
 					VStack {
-						Image(Constants.companyLogoImageString)
-							.resizable()
-							.frame(width: 100, height: 100)
+						if let selectedTourID = homeNavigationRouter.selectedTourID {
+							createDetailsPage(selectedTourID)
+						} else {
+							Image(Constants.companyLogoImageString)
+								.resizable()
+								.frame(width: 100, height: 100)
+						}
 					}
 					.frame(maxWidth: .infinity, maxHeight: .infinity)
 				}

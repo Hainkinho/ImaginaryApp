@@ -29,7 +29,12 @@ struct CompositionRoot {
 		
 		addDummyData(toAppStateStore: appStateStore)
 		
-		let mainPagesCreator = MainPagesCreator(appStateStore: appStateStore)
+		let homeNavigationRouter = HomeNavigationRouter()
+		
+		let mainPagesCreator = MainPagesCreator(
+			appStateStore: appStateStore,
+			homeNavigationRouter: homeNavigationRouter
+		)
 		
 		return CompositionRootResult(mainPagesCreator: mainPagesCreator)
 	}

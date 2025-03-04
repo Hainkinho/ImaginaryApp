@@ -32,11 +32,7 @@ struct ContentView: View {
 	var body: some View {
 		VStack {
 			if let crResult = compositionRootResult {
-				AdaptiveHomeNavigationLayout(
-					createHomePage: {
-						crResult.mainPagesCreator.createHomePage()
-					}
-				)
+				crResult.mainPagesCreator.createAdaptiveHomeNavigationLayout()
 			} else {
 				AppLoadingScreen()
 			}
