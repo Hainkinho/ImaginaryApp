@@ -36,6 +36,7 @@
 		5C20CE032D772CD5008139BE /* UIAlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CE002D772CD5008139BE /* UIAlertInformation.swift */; };
 		5C75D9B32D77307A0061C9DB /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D9B22D77307A0061C9DB /* AsyncButton.swift */; };
 		5C75D9B52D7733FE0061C9DB /* FetchAllToursUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D9B42D7733FE0061C9DB /* FetchAllToursUsecase.swift */; };
+		5C75D9B72D7743200061C9DB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5C75D9B62D7743200061C9DB /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		5C20CE002D772CD5008139BE /* UIAlertInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertInformation.swift; sourceTree = "<group>"; };
 		5C75D9B22D77307A0061C9DB /* AsyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		5C75D9B42D7733FE0061C9DB /* FetchAllToursUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllToursUsecase.swift; sourceTree = "<group>"; };
+		5C75D9B62D7743200061C9DB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				5C20CDB82D76F2B3008139BE /* UI */,
 				5C20CDE12D7716E6008139BE /* Networking */,
 				5C20CDB42D76E7C0008139BE /* URL + Helpers.swift */,
+				5C75D9B62D7743200061C9DB /* Localizable.xcstrings */,
 				5C20CDA82D76E415008139BE /* Assets.xcassets */,
 			);
 			path = Imaginary;
@@ -264,6 +267,7 @@
 			files = (
 				5C20CDAC2D76E415008139BE /* Preview Assets.xcassets in Resources */,
 				5C20CDAD2D76E415008139BE /* Assets.xcassets in Resources */,
+				5C75D9B72D7743200061C9DB /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +369,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -421,6 +426,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

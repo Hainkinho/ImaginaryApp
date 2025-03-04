@@ -1,0 +1,54 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "ALL" : {
+      "comment" : "TopNavigationBar Button Title - HomePage"
+    },
+    "Available Till: %@" : {
+      "comment" : "Text - HomeListCell"
+    },
+    "Bookable" : {
+      "comment" : "Section header text - DetailsPage"
+    },
+    "CALL TO BOOK" : {
+      "comment" : "Call to action button title - DetailsPage"
+    },
+    "Cancel" : {
+      "comment" : "text - Alert"
+    },
+    "Error" : {
+      "comment" : "text - Alert"
+    },
+    "loading data..." : {
+      "comment" : "Subtitle - AppLoadingScreen"
+    },
+    "OK" : {
+      "comment" : "text - Alert"
+    },
+    "PRICE:" : {
+      "comment" : "Price - HomeListCell"
+    },
+    "PRICE: %@" : {
+      "comment" : "Price text - DetailsPage"
+    },
+    "Something went Wrong" : {
+      "comment" : "text - Alert"
+    },
+    "To book a trip, please call us at +43 666 1234567" : {
+      "comment" : "Alert body - DetailsPage"
+    },
+    "TOP 5" : {
+      "comment" : "TopNavigationBar Button Title - HomePage"
+    },
+    "Want to book a Trip?" : {
+      "comment" : "Alert title - DetailsPage"
+    },
+    "We could not fetch the current tour details. Please try again later." : {
+      "comment" : "Alert message - DetailsPageViewModel"
+    },
+    "We could not fetch the tours from the remote server. Please try again later..." : {
+      "comment" : "Error Alert body - HomePage"
+    }
+  },
+  "version" : "1.0"
+}
