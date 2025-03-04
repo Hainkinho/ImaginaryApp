@@ -13,6 +13,7 @@ struct MainPagesCreator {
 	
 	let appStateStore: AppStateStore
 	let homeNavigationRouter: HomeNavigationRouter
+	let fetchTourDetailsUsecase: FetchTourDetailsUsecase
 	
 	
 	func createAdaptiveHomeNavigationLayout() -> AdaptiveHomeNavigationLayout {
@@ -45,7 +46,7 @@ struct MainPagesCreator {
 	func createDetailsPage(forTourID tourID: TourID) -> DetailsContainerPage {
 		let tour = appStateStore.curAppState.toursDict[tourID]! // This must always be true
 		
-		let vm = DetailsPageViewModel(tour: tour)
+		let vm = DetailsPageViewModel(tour: tour, fetchTourDetailsUsecase: fetchTourDetailsUsecase)
 		vm.subcribe(appStatePublisher: appStateStore.appStateDidChangePublisher)
 		vm.update(withNewAppState: appStateStore.curAppState)
 		

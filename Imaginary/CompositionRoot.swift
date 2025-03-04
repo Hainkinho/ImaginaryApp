@@ -21,17 +21,18 @@ struct CompositionRoot {
 		
 		let appStateStore = AppStateStore(initialAppState: .empty)
 		
-		// TODO: fetch tours and add it to the appStateStore
-		
 		let networkService = NetworkService()
-		
-//		addDummyData(toAppStateStore: appStateStore)
+		let fetchTourDetailsUsecase = FetchTourDetailsUsecase(
+			networkService: networkService,
+			appStateStore: appStateStore
+		)
 		
 		let homeNavigationRouter = HomeNavigationRouter()
 		
 		let mainPagesCreator = MainPagesCreator(
 			appStateStore: appStateStore,
-			homeNavigationRouter: homeNavigationRouter
+			homeNavigationRouter: homeNavigationRouter,
+			fetchTourDetailsUsecase: fetchTourDetailsUsecase
 		)
 		
 		let tours = (try? await networkService.fetchAllTours()) ?? []

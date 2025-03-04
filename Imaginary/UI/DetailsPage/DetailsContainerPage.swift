@@ -12,6 +12,10 @@ struct DetailsContainerPage: View {
 	
 	@ObservedObject var vm: DetailsPageViewModel
 	
+	func viewDidAppear() async {
+		await vm.fetchTourDetails()
+	}
+	
 	var body: some View {
 		DetailsPage(
 			showcaseImageURL: vm.tourDetails?.fullResImageURL ?? vm.tour.snapshotImageURL,
@@ -21,5 +25,8 @@ struct DetailsContainerPage: View {
 			startDate: vm.tour.startDate,
 			endDate: vm.tour.endDate
 		)
+		.task {
+			await viewDidAppear()
+		}
 	}
 }

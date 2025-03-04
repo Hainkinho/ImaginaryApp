@@ -15,12 +15,14 @@ class DetailsPageViewModel: ObservableObject {
 	@Published var tour: Tour
 	@Published var tourDetails: TourDetails? = nil
 	
-	let tourID: TourID
+	private let tourID: TourID
+	private let fetchTourDetailsUsecase: FetchTourDetailsUsecase
 	private var subscription: AnyCancellable? = nil
 	
-	init(tour: Tour) {
+	init(tour: Tour, fetchTourDetailsUsecase: FetchTourDetailsUsecase) {
 		self.tour = tour
 		self.tourID = tour.id
+		self.fetchTourDetailsUsecase = fetchTourDetailsUsecase
 	}
 	
 	func subcribe(appStatePublisher: AnyPublisher<AppState, Never>) {
@@ -36,6 +38,19 @@ class DetailsPageViewModel: ObservableObject {
 			self.tour = newTour
 		}
 		self.tourDetails = newAppState.tourDetailsDict[self.tourID]
+	}
+	
+	
+	func fetchTourDetails() async {
+		do {
+			let tourDetails = try await fetchTourDetailsUsecase.fetch(tourID: tourID)
+			
+			await MainActor.run {
+				self.tourDetails = tourDetails
+			}
+		} catch let error {
+			print(error)
+		}
 	}
 	
 }

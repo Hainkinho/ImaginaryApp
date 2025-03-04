@@ -31,6 +31,7 @@
 		5C20CDE72D7718A6008139BE /* NetworkService + AsyncAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDE62D7718A6008139BE /* NetworkService + AsyncAwait.swift */; };
 		5C20CDF42D7727C2008139BE /* DetailsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDF32D7727C2008139BE /* DetailsPageViewModel.swift */; };
 		5C20CDF62D7727CC008139BE /* DetailsContainerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDF52D7727CC008139BE /* DetailsContainerPage.swift */; };
+		5C20CDF82D772987008139BE /* FetchTourDetailsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDF72D772987008139BE /* FetchTourDetailsUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		5C20CDE62D7718A6008139BE /* NetworkService + AsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService + AsyncAwait.swift"; sourceTree = "<group>"; };
 		5C20CDF32D7727C2008139BE /* DetailsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageViewModel.swift; sourceTree = "<group>"; };
 		5C20CDF52D7727CC008139BE /* DetailsContainerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsContainerPage.swift; sourceTree = "<group>"; };
+		5C20CDF72D772987008139BE /* FetchTourDetailsUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTourDetailsUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				5C20CDD02D77028C008139BE /* MainPagesCreator.swift */,
 				5C20CDC62D76FB85008139BE /* AppStateStore.swift */,
 				5C20CDCA2D76FCE1008139BE /* AppState.swift */,
+				5C20CDF92D772A88008139BE /* Usecases */,
 				5C20CDC12D76FA1F008139BE /* DomainModels */,
 				5C20CDB82D76F2B3008139BE /* UI */,
 				5C20CDE12D7716E6008139BE /* Networking */,
@@ -164,6 +167,14 @@
 				5C20CDBF2D76F669008139BE /* DetailsPage.swift */,
 			);
 			path = DetailsPage;
+			sourceTree = "<group>";
+		};
+		5C20CDF92D772A88008139BE /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				5C20CDF72D772987008139BE /* FetchTourDetailsUsecase.swift */,
+			);
+			path = Usecases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C20CDB72D76EB17008139BE /* Constants.swift in Sources */,
+				5C20CDF82D772987008139BE /* FetchTourDetailsUsecase.swift in Sources */,
 				5C20CDC52D76FA7A008139BE /* TourDetails.swift in Sources */,
 				5C20CDD52D770A4C008139BE /* HomePageViewModel.swift in Sources */,
 				5C20CDCB2D76FCE1008139BE /* AppState.swift in Sources */,
