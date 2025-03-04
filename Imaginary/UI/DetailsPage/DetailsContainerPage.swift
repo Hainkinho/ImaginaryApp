@@ -21,7 +21,6 @@ struct DetailsContainerPage: View {
 			showcaseImageURL: vm.tourDetails?.fullResImageURL ?? vm.tour.snapshotImageURL,
 			title: vm.tour.title,
 			description: vm.tourDetails?.longDescription ?? vm.tour.shortDescription,
-			isBookable: true, // TODO:
 			startDate: vm.tour.startDate,
 			endDate: vm.tour.endDate
 		)

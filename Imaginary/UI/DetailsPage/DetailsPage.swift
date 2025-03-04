@@ -15,9 +15,15 @@ struct DetailsPage: View {
 	let showcaseImageURL: URL
 	let title: String
 	let description: String
-	let isBookable: Bool
 	let startDate: Date
 	let endDate: Date
+	
+	var dateRangeText: String {
+		let startDateString = startDate.formatted(date: .numeric, time: .shortened)
+		let endDateString = endDate.formatted(date: .numeric, time: .shortened)
+		
+		return "\(startDateString) - \(endDateString)"
+	}
 	
 	var body: some View {
 		ScrollView {
@@ -44,17 +50,18 @@ struct DetailsPage: View {
 					
 					Text(description)
 						.frame(minHeight: 150, alignment: .top)
+						.padding(.bottom, 10)
 					
-					Text(isBookable ? "Bookable" : "Not Bookable")
+					Text("Bookable", comment: "Section header text - DetailsPage")
 						.fontWeight(.bold)
 					
-					Text("Start - End")
+					Text(dateRangeText)
 				}
 				.frame(maxWidth: .infinity, alignment: .leading)
 				.padding(.vertical, 40)
 				
 				Button(action: {}) {
-					Text("CALL TO BOOK")
+					Text("CALL TO BOOK", comment: "Call to action button title - DetailsPage")
 						.foregroundStyle(.white)
 						.fontWeight(.bold)
 						.font(.title3)
@@ -83,7 +90,6 @@ struct DetailsPage: View {
 		showcaseImageURL: URL.placeholderImageURL,
 		title: "Title",
 		description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
-		isBookable: true,
 		startDate: .now.addingTimeInterval(-1000),
 		endDate: .now
 	)
