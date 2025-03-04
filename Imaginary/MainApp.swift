@@ -18,3 +18,27 @@ struct MainApp: App {
         }
     }
 }
+
+
+struct ContentView: View {
+	
+	@State private var compositionRootResult: CompositionRootResult? = nil
+	
+	func viewDidAppear() async {
+		let compositionRoot = CompositionRoot()
+		self.compositionRootResult = await compositionRoot.assembleAppsObjectGraph()
+	}
+	
+	var body: some View {
+		VStack {
+			if let crResult = compositionRootResult {
+				HomeContainerPage()
+			} else {
+				AppLoadingScreen()
+			}
+		}
+		.task {
+			await viewDidAppear()
+		}
+	}
+}
