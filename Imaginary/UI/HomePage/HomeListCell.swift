@@ -14,8 +14,14 @@ struct HomeListCell: View {
 	let title: String
 	let description: String
 	let imageURL: URL
+	let startDate: Date
 	let endDate: Date
 	let localizedPrice: String
+	
+	
+	var availableTillDateString: String {
+		return endDate.formatted(date: .numeric, time: .shortened)
+	}
 	
 	
 	var body: some View {
@@ -36,21 +42,31 @@ struct HomeListCell: View {
 			)
 			
 			VStack(alignment: .leading) {
-				Text(title)
-					.fontWeight(.bold)
+				
+				HStack {
+					Text(title)
+						.frame(maxWidth: .infinity, alignment: .leading)
+						.lineLimit(1)
+					
+					HStack(spacing: 2) {
+						Text("PRICE:", comment: "Price - HomeListCell")
+							.lineLimit(1)
+							
+						Text(localizedPrice)
+					}
+					.layoutPriority(1)
+				}
+				.fontWeight(.bold)
 				
 				Text(description)
+					.frame(maxWidth: .infinity, alignment: .leading)
 				
-				Text("Available Till", comment: "HomeListCell")
+				Text("Available Till: \(availableTillDateString)", comment: "Text - HomeListCell")
+					.frame(maxWidth: .infinity, alignment: .leading)
+					.opacity(0.85)
 			}
 			.frame(maxWidth: .infinity, alignment: .leading)
 			.layoutPriority(0)
-			
-			HStack {
-				Text("PRICE:", comment: "Price - HomeListCell")
-			}
-			.layoutPriority(1)
-			Text(localizedPrice)
 		}
 		.foregroundStyle(.black)
 	}

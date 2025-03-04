@@ -38,6 +38,7 @@ struct HomePage: View {
 								title: tour.title,
 								description: tour.shortDescription,
 								imageURL: tour.snapshotImageURL,
+								startDate: tour.startDate,
 								endDate: tour.endDate,
 								localizedPrice: tour.localizedPrice
 							)
@@ -50,6 +51,7 @@ struct HomePage: View {
 								title: tour.title,
 								description: tour.shortDescription,
 								imageURL: tour.snapshotImageURL,
+								startDate: tour.startDate,
 								endDate: tour.endDate,
 								localizedPrice: tour.localizedPrice
 							)
