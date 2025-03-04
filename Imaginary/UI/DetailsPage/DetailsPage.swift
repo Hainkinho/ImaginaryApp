@@ -9,55 +9,6 @@
 
 import SwiftUI
 
-import Combine
-class DetailsPageViewModel: ObservableObject {
-	
-	@Published var tour: Tour
-	@Published var tourDetails: TourDetails? = nil
-	
-	let tourID: TourID
-	private var subscription: AnyCancellable? = nil
-	
-	init(tour: Tour) {
-		self.tour = tour
-		self.tourID = tour.id
-	}
-	
-	func subcribe(appStatePublisher: AnyPublisher<AppState, Never>) {
-		self.subscription = appStatePublisher
-			.sink { [weak self] newAppState in
-				self?.update(withNewAppState: newAppState)
-			}
-	}
-	
-	
-	func update(withNewAppState newAppState: AppState) {
-		if let newTour = newAppState.toursDict[self.tourID] {
-			self.tour = newTour
-		}
-		self.tourDetails = newAppState.tourDetailsDict[self.tourID]
-	}
-	
-}
-
-
-
-struct DetailsContainerPage: View {
-	
-	@ObservedObject var vm: DetailsPageViewModel
-	
-	var body: some View {
-		DetailsPage(
-			showcaseImageURL: vm.tourDetails?.fullResImageURL ?? vm.tour.snapshotImageURL,
-			title: vm.tour.title,
-			description: vm.tourDetails?.longDescription ?? vm.tour.shortDescription,
-			isBookable: true, // TODO:
-			startDate: vm.tour.startDate,
-			endDate: vm.tour.endDate
-		)
-	}
-}
-
 
 struct DetailsPage: View {
 	
