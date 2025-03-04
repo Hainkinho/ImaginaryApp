@@ -71,9 +71,21 @@ struct DetailsPage: View {
 	var body: some View {
 		ScrollView {
 			VStack(spacing: 0) {
-				Rectangle()
-					.frame(maxWidth: .infinity)
-					.frame(height: 300)
+				AsyncImage(
+					url: showcaseImageURL,
+					content: { image in
+						image
+							.resizable()
+							.scaledToFit()
+							.frame(maxWidth: .infinity)
+					},
+					placeholder: {
+						Rectangle()
+							.foregroundStyle(.gray)
+							.frame(maxWidth: .infinity)
+							.frame(height: 100)
+					}
+				)
 				
 				VStack(alignment: .leading, spacing: 8) {
 					Text(title)

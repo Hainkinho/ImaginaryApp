@@ -20,9 +20,20 @@ struct HomeListCell: View {
 	
 	var body: some View {
 		HStack(alignment: .top) {
-			Rectangle()
-				.frame(width: 70, height: 50)
-				.layoutPriority(1)
+			AsyncImage(
+				url: imageURL,
+				content: { image in
+					image
+						.resizable()
+						.scaledToFit()
+						.frame(width: 100, height: 50)
+				},
+				placeholder: {
+					Rectangle()
+						.foregroundStyle(.gray)
+						.frame(width: 100, height: 50)
+				}
+			)
 			
 			VStack(alignment: .leading) {
 				Text(title)
