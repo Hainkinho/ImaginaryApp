@@ -19,6 +19,8 @@
 		5C20CDC02D76F669008139BE /* DetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDBF2D76F669008139BE /* DetailsPage.swift */; };
 		5C20CDC32D76FA34008139BE /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDC22D76FA34008139BE /* Tour.swift */; };
 		5C20CDC52D76FA7A008139BE /* TourDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDC42D76FA7A008139BE /* TourDetails.swift */; };
+		5C20CDC72D76FB85008139BE /* AppStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDC62D76FB85008139BE /* AppStateStore.swift */; };
+		5C20CDCB2D76FCE1008139BE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDCA2D76FCE1008139BE /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		5C20CDBF2D76F669008139BE /* DetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPage.swift; sourceTree = "<group>"; };
 		5C20CDC22D76FA34008139BE /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		5C20CDC42D76FA7A008139BE /* TourDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetails.swift; sourceTree = "<group>"; };
+		5C20CDC62D76FB85008139BE /* AppStateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateStore.swift; sourceTree = "<group>"; };
+		5C20CDCA2D76FCE1008139BE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				5C20CDAA2D76E415008139BE /* MainApp.swift */,
 				5C20CDB62D76EB17008139BE /* Constants.swift */,
 				5C20CDA92D76E415008139BE /* ContentView.swift */,
+				5C20CDC62D76FB85008139BE /* AppStateStore.swift */,
+				5C20CDCA2D76FCE1008139BE /* AppState.swift */,
 				5C20CDC12D76FA1F008139BE /* DomainModels */,
 				5C20CDB82D76F2B3008139BE /* UI */,
 				5C20CDB42D76E7C0008139BE /* URL + Helpers.swift */,
@@ -183,7 +189,9 @@
 				5C20CDB72D76EB17008139BE /* Constants.swift in Sources */,
 				5C20CDAE2D76E415008139BE /* ContentView.swift in Sources */,
 				5C20CDC52D76FA7A008139BE /* TourDetails.swift in Sources */,
+				5C20CDCB2D76FCE1008139BE /* AppState.swift in Sources */,
 				5C20CDBC2D76F366008139BE /* HomeContainerPage.swift in Sources */,
+				5C20CDC72D76FB85008139BE /* AppStateStore.swift in Sources */,
 				5C20CDC02D76F669008139BE /* DetailsPage.swift in Sources */,
 				5C20CDBA2D76F2C4008139BE /* HomeListCell.swift in Sources */,
 				5C20CDB32D76E60A008139BE /* HomePage.swift in Sources */,
