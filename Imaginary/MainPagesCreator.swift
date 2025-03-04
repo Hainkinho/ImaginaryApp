@@ -42,18 +42,14 @@ struct MainPagesCreator {
 	}
 	
 	
-	func createDetailsPage(forTourID tourID: TourID) -> DetailsPage {
-		let tour = appStateStore.curAppState.toursDict[tourID] ?? .createExample(withID: "0")
-		let tourDetails = appStateStore.curAppState.tourDetailsDict[tourID] ?? .createExample(withID: "0")
+	func createDetailsPage(forTourID tourID: TourID) -> DetailsContainerPage {
+		let tour = appStateStore.curAppState.toursDict[tourID]! // This must always be true
 		
-		return DetailsPage(
-			showcaseImageURL: tourDetails.fullResImageURL,
-			title: tour.title,
-			description: tourDetails.longDescription,
-			isBookable: true,
-			startDate: tour.startDate,
-			endDate: tour.endDate
-		)
+		let vm = DetailsPageViewModel(tour: tour)
+		vm.subcribe(appStatePublisher: appStateStore.appStateDidChangePublisher)
+		vm.update(withNewAppState: appStateStore.curAppState)
+		
+		return DetailsContainerPage(vm: vm)
 	}
 	
 }

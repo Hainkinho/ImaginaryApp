@@ -25,7 +25,7 @@ struct AdaptiveHomeNavigationLayout: View {
 	@StateObject var homeNavigationRouter: HomeNavigationRouter
 	
 	let createHomePage: (HomePageListButtonConfig) -> HomeContainerPage
-	let createDetailsPage: (TourID) -> DetailsPage
+	let createDetailsPage: (TourID) -> DetailsContainerPage
 	
 	var body: some View {
 		if sizeClass == .compact {

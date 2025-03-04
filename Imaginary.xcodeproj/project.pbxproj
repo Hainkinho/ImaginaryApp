@@ -117,7 +117,7 @@
 			children = (
 				5C20CDBB2D76F366008139BE /* AdaptiveHomeNavigationLayout.swift */,
 				5C20CDD62D770C32008139BE /* HomePage */,
-				5C20CDBF2D76F669008139BE /* DetailsPage.swift */,
+				5C20CDE82D772009008139BE /* DetailsPage */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -150,6 +150,14 @@
 				5C20CDE42D7716ED008139BE /* Models.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		5C20CDE82D772009008139BE /* DetailsPage */ = {
+			isa = PBXGroup;
+			children = (
+				5C20CDBF2D76F669008139BE /* DetailsPage.swift */,
+			);
+			path = DetailsPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
