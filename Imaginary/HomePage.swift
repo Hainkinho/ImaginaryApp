@@ -42,8 +42,19 @@ extension View {
 
 struct HomePage: View {
 	
+	enum HomePageItemsFilter: CaseIterable {
+		case None
+		case Top5Only
+	}
+	
+	@State private var activeItemsFilter = HomePageItemsFilter.None
+	
 	var body: some View {
 		NavigationStack {
+			
+			topFilterToolbar
+			.padding(.top, 1) // Prevents that the buttons background Color
+			
 			List {
 				ForEach(1 ... 100, id: \.self) { i in
 					Button(action: {}) {
@@ -62,6 +73,36 @@ struct HomePage: View {
 			.setupHomePageNavbar(tappedMoreButton: {
 				// TODO: Add logic here. The assignment doesn't specify details, so this needs clarification.
 			})
+		}
+	}
+	
+	
+	var topFilterToolbar: some View {
+		HStack(spacing: 0) {
+			ForEach([HomePageItemsFilter.None, .Top5Only], id: \.self) { filter in
+				Button(action: { self.activeItemsFilter = filter }) {
+					let isSelected = activeItemsFilter == filter
+					Text(getTopToolbarButtonTitle(for: filter))
+						.foregroundStyle(isSelected ? .white : .black)
+						.fontWeight(isSelected ? .bold : .medium)
+						.opacity(isSelected ? 1 : 0.8)
+						.frame(height: 70)
+						.frame(maxWidth: .infinity)
+						.background(isSelected ? Color.blue : .black.opacity(0.1))
+				}
+				.buttonStyle(.plain)
+			}
+		}
+		.frame(maxWidth: .infinity)
+	}
+	
+	
+	func getTopToolbarButtonTitle(for filter: HomePageItemsFilter) -> String {
+		switch filter {
+		case .None:
+			return String(localized: "ALL", comment: "TopNavigationBar Button Title - HomePage")
+		case .Top5Only:
+			return String(localized: "TOP 5", comment: "TopNavigationBar Button Title - HomePage")
 		}
 	}
 }
