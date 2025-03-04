@@ -53,7 +53,7 @@ extension View {
 						Image(Constants.companyLogoImageString)
 							.resizable()
 							.scaledToFit()
-							.frame(width: 40, height: 40)
+							.frame(width: 30, height: 30)
 						
 						if let tourTitle = tourTitle {
 							Text(tourTitle)
