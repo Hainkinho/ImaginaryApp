@@ -13,6 +13,7 @@
 		5C20CDAF2D76E415008139BE /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDAA2D76E415008139BE /* MainApp.swift */; };
 		5C20CDB32D76E60A008139BE /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDB22D76E60A008139BE /* HomePage.swift */; };
 		5C20CDB52D76E7C0008139BE /* URL + Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDB42D76E7C0008139BE /* URL + Helpers.swift */; };
+		5C20CDB72D76EB17008139BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDB62D76EB17008139BE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		5C20CDAA2D76E415008139BE /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		5C20CDB22D76E60A008139BE /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		5C20CDB42D76E7C0008139BE /* URL + Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + Helpers.swift"; sourceTree = "<group>"; };
+		5C20CDB62D76EB17008139BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				5C20CDA72D76E415008139BE /* Preview Content */,
 				5C20CDAA2D76E415008139BE /* MainApp.swift */,
+				5C20CDB62D76EB17008139BE /* Constants.swift */,
 				5C20CDA92D76E415008139BE /* ContentView.swift */,
 				5C20CDB22D76E60A008139BE /* HomePage.swift */,
 				5C20CDB42D76E7C0008139BE /* URL + Helpers.swift */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C20CDB72D76EB17008139BE /* Constants.swift in Sources */,
 				5C20CDAE2D76E415008139BE /* ContentView.swift in Sources */,
 				5C20CDB32D76E60A008139BE /* HomePage.swift in Sources */,
 				5C20CDAF2D76E415008139BE /* MainApp.swift in Sources */,

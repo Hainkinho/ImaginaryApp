@@ -8,6 +8,38 @@
 
 import SwiftUI
 
+extension View {
+	
+	func setupHomePageNavbar(tappedMoreButton: @escaping () -> Void) -> some View {
+		self
+			.toolbar {
+				ToolbarItem(placement: .topBarLeading) {
+					HStack {
+						Image(Constants.companyLogoImageString)
+							.resizable()
+							.scaledToFit()
+							.frame(width: 40, height: 40)
+						
+						Text(Constants.appName)
+							.fontWeight(.bold)
+					}
+				}
+				
+				ToolbarItem(placement: .topBarTrailing) {
+					Button(action: tappedMoreButton) {
+						Image(systemName: "ellipsis")
+							.rotationEffect(.init(degrees: 90))
+							.foregroundStyle(.black)
+							.frame(width: 44, height: 44)  // Ensures the button is easily tappable
+							.background(Color.white.opacity(0.00001))
+					}
+				}
+			}
+	}
+}
+
+
+
 struct HomePage: View {
 	
 	var body: some View {
@@ -26,8 +58,10 @@ struct HomePage: View {
 				}
 			}
 			.listStyle(.plain)
-			.navigationTitle("Imaginary")
 			.navigationBarTitleDisplayMode(.inline)
+			.setupHomePageNavbar(tappedMoreButton: {
+				// TODO: Add logic here. The assignment doesn't specify details, so this needs clarification.
+			})
 		}
 	}
 }
