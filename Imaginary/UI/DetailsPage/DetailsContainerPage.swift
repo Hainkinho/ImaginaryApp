@@ -22,7 +22,10 @@ struct DetailsContainerPage: View {
 			title: vm.tour.title,
 			description: vm.tourDetails?.longDescription ?? vm.tour.shortDescription,
 			startDate: vm.tour.startDate,
-			endDate: vm.tour.endDate
+			endDate: vm.tour.endDate,
+			tappedCallToActionButton: {
+				await vm.callToActionButtonTapped()
+			}
 		)
 		.customAlertInfo($vm.activeAlert)
 		.task {

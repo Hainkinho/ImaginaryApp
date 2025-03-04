@@ -34,6 +34,7 @@
 		5C20CDF82D772987008139BE /* FetchTourDetailsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDF72D772987008139BE /* FetchTourDetailsUsecase.swift */; };
 		5C20CE022D772CD5008139BE /* AlertInfoModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDFF2D772CD5008139BE /* AlertInfoModifier.swift */; };
 		5C20CE032D772CD5008139BE /* UIAlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CE002D772CD5008139BE /* UIAlertInformation.swift */; };
+		5C75D9B32D77307A0061C9DB /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D9B22D77307A0061C9DB /* AsyncButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		5C20CDF72D772987008139BE /* FetchTourDetailsUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTourDetailsUsecase.swift; sourceTree = "<group>"; };
 		5C20CDFF2D772CD5008139BE /* AlertInfoModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfoModifier.swift; sourceTree = "<group>"; };
 		5C20CE002D772CD5008139BE /* UIAlertInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertInformation.swift; sourceTree = "<group>"; };
+		5C75D9B22D77307A0061C9DB /* AsyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 		5C20CE012D772CD5008139BE /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				5C75D9B22D77307A0061C9DB /* AsyncButton.swift */,
 				5C20CDFF2D772CD5008139BE /* AlertInfoModifier.swift */,
 				5C20CE002D772CD5008139BE /* UIAlertInformation.swift */,
 			);
@@ -279,6 +282,7 @@
 				5C20CDE22D7716E6008139BE /* NetworkService.swift in Sources */,
 				5C20CE022D772CD5008139BE /* AlertInfoModifier.swift in Sources */,
 				5C20CE032D772CD5008139BE /* UIAlertInformation.swift in Sources */,
+				5C75D9B32D77307A0061C9DB /* AsyncButton.swift in Sources */,
 				5C20CDC72D76FB85008139BE /* AppStateStore.swift in Sources */,
 				5C20CDF42D7727C2008139BE /* DetailsPageViewModel.swift in Sources */,
 				5C20CDC02D76F669008139BE /* DetailsPage.swift in Sources */,

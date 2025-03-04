@@ -25,6 +25,9 @@ struct DetailsPage: View {
 		return "\(startDateString) - \(endDateString)"
 	}
 	
+	let tappedCallToActionButton: () async -> Void
+	@State private var isCallToActionButtonRunning = false
+	
 	var body: some View {
 		ScrollView {
 			VStack(spacing: 0) {
@@ -60,27 +63,38 @@ struct DetailsPage: View {
 				.frame(maxWidth: .infinity, alignment: .leading)
 				.padding(.vertical, 40)
 				
-				Button(action: {}) {
-					Text("CALL TO BOOK", comment: "Call to action button title - DetailsPage")
-						.foregroundStyle(.white)
-						.fontWeight(.bold)
-						.font(.title3)
-						.frame(maxWidth: .infinity)
-						.padding(.horizontal, 50) // Prevents image from overlapping text if it becomes too long
-						.overlay(alignment: .leading) {
-							Image(Constants.companyLogoImageString)
-								.resizable()
-								.frame(width: 40, height: 40)
-								.padding(.leading)
-						}
-						.frame(maxWidth: .infinity)
-						.frame(minHeight: 65)
-						.background(Color.blue)
-				}
+				callToActionButton
 			}
 			.padding(.horizontal)
 			.padding(.vertical)
 		}
+	}
+	
+	var callToActionButton: some View {
+		AsyncButton(
+			isLoading: $isCallToActionButtonRunning,
+			action: {
+				await tappedCallToActionButton()
+			},
+			label: {
+				Text("CALL TO BOOK", comment: "Call to action button title - DetailsPage")
+					.foregroundStyle(.white)
+					.fontWeight(.bold)
+					.font(.title3)
+					.frame(maxWidth: .infinity)
+					.padding(.horizontal, 50) // Prevents image from overlapping text if it becomes too long
+					.overlay(alignment: .leading) {
+						Image(Constants.companyLogoImageString)
+							.resizable()
+							.frame(width: 40, height: 40)
+							.padding(.leading)
+					}
+					.frame(maxWidth: .infinity)
+					.frame(minHeight: 65)
+					.background(Color.blue)
+					.opacity(isCallToActionButtonRunning ? 0.3 : 1.0)
+			}
+		)
 	}
 }
 
@@ -91,6 +105,7 @@ struct DetailsPage: View {
 		title: "Title",
 		description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
 		startDate: .now.addingTimeInterval(-1000),
-		endDate: .now
+		endDate: .now,
+		tappedCallToActionButton: {}
 	)
 }

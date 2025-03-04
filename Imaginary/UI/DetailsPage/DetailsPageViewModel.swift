@@ -54,9 +54,22 @@ class DetailsPageViewModel: ObservableObject {
 			print(error)
 			await MainActor.run {
 				self.activeAlert = .somethingWentWrong(
-					localizedMessage: String(localized: "We could not fetch the current tour details. Please try again later.", comment: "Alert message - DetailsPageViewModel")
+					localizedMessage: String(
+						localized: "We could not fetch the current tour details. Please try again later.",
+						comment: "Alert message - DetailsPageViewModel"
+					)
 				)
 			}
+		}
+	}
+	
+	
+	func callToActionButtonTapped() async {
+		await MainActor.run {
+			self.activeAlert = .init(
+				localizedTitle: String(localized: "Want to book a Trip?", comment: "Alert title - DetailsPage"),
+				localizedMessage: String(localized: "To book a trip, please call us at +43 666 1234567", comment: "Alert body - DetailsPage")
+			)
 		}
 	}
 	
