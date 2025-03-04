@@ -16,6 +16,7 @@
 		5C20CDB72D76EB17008139BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDB62D76EB17008139BE /* Constants.swift */; };
 		5C20CDBA2D76F2C4008139BE /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDB92D76F2C4008139BE /* HomeListCell.swift */; };
 		5C20CDBC2D76F366008139BE /* HomeContainerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDBB2D76F366008139BE /* HomeContainerPage.swift */; };
+		5C20CDC02D76F669008139BE /* DetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDBF2D76F669008139BE /* DetailsPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		5C20CDB62D76EB17008139BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5C20CDB92D76F2C4008139BE /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
 		5C20CDBB2D76F366008139BE /* HomeContainerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPage.swift; sourceTree = "<group>"; };
+		5C20CDBF2D76F669008139BE /* DetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				5C20CDBB2D76F366008139BE /* HomeContainerPage.swift */,
 				5C20CDB22D76E60A008139BE /* HomePage.swift */,
 				5C20CDB92D76F2C4008139BE /* HomeListCell.swift */,
+				5C20CDBF2D76F669008139BE /* DetailsPage.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				5C20CDB72D76EB17008139BE /* Constants.swift in Sources */,
 				5C20CDAE2D76E415008139BE /* ContentView.swift in Sources */,
 				5C20CDBC2D76F366008139BE /* HomeContainerPage.swift in Sources */,
+				5C20CDC02D76F669008139BE /* DetailsPage.swift in Sources */,
 				5C20CDBA2D76F2C4008139BE /* HomeListCell.swift in Sources */,
 				5C20CDB32D76E60A008139BE /* HomePage.swift in Sources */,
 				5C20CDAF2D76E415008139BE /* MainApp.swift in Sources */,
