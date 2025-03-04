@@ -17,6 +17,8 @@
 		5C20CDBA2D76F2C4008139BE /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDB92D76F2C4008139BE /* HomeListCell.swift */; };
 		5C20CDBC2D76F366008139BE /* HomeContainerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDBB2D76F366008139BE /* HomeContainerPage.swift */; };
 		5C20CDC02D76F669008139BE /* DetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDBF2D76F669008139BE /* DetailsPage.swift */; };
+		5C20CDC32D76FA34008139BE /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDC22D76FA34008139BE /* Tour.swift */; };
+		5C20CDC52D76FA7A008139BE /* TourDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDC42D76FA7A008139BE /* TourDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		5C20CDB92D76F2C4008139BE /* HomeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
 		5C20CDBB2D76F366008139BE /* HomeContainerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPage.swift; sourceTree = "<group>"; };
 		5C20CDBF2D76F669008139BE /* DetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPage.swift; sourceTree = "<group>"; };
+		5C20CDC22D76FA34008139BE /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
+		5C20CDC42D76FA7A008139BE /* TourDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 				5C20CDAA2D76E415008139BE /* MainApp.swift */,
 				5C20CDB62D76EB17008139BE /* Constants.swift */,
 				5C20CDA92D76E415008139BE /* ContentView.swift */,
+				5C20CDC12D76FA1F008139BE /* DomainModels */,
 				5C20CDB82D76F2B3008139BE /* UI */,
 				5C20CDB42D76E7C0008139BE /* URL + Helpers.swift */,
 				5C20CDA82D76E415008139BE /* Assets.xcassets */,
@@ -91,6 +96,15 @@
 				5C20CDBF2D76F669008139BE /* DetailsPage.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		5C20CDC12D76FA1F008139BE /* DomainModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C20CDC22D76FA34008139BE /* Tour.swift */,
+				5C20CDC42D76FA7A008139BE /* TourDetails.swift */,
+			);
+			path = DomainModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,10 +182,12 @@
 			files = (
 				5C20CDB72D76EB17008139BE /* Constants.swift in Sources */,
 				5C20CDAE2D76E415008139BE /* ContentView.swift in Sources */,
+				5C20CDC52D76FA7A008139BE /* TourDetails.swift in Sources */,
 				5C20CDBC2D76F366008139BE /* HomeContainerPage.swift in Sources */,
 				5C20CDC02D76F669008139BE /* DetailsPage.swift in Sources */,
 				5C20CDBA2D76F2C4008139BE /* HomeListCell.swift in Sources */,
 				5C20CDB32D76E60A008139BE /* HomePage.swift in Sources */,
+				5C20CDC32D76FA34008139BE /* Tour.swift in Sources */,
 				5C20CDAF2D76E415008139BE /* MainApp.swift in Sources */,
 				5C20CDB52D76E7C0008139BE /* URL + Helpers.swift in Sources */,
 			);
