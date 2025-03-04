@@ -12,6 +12,12 @@ import Alamofire
 
 struct NetworkService {
 	
+	enum CustomError: Error {
+		case InvalidResponse
+		case ObjectParsingError
+	}
+	
+	
 	func fetchAllTours(completion: @escaping (Result<[Tour], Error>) -> Void) {
 		let headers: HTTPHeaders = [
 			"Accept": "application/json"
@@ -58,6 +64,34 @@ struct NetworkService {
 	}
 	
 	
+	func fetchTourDetails(forTourID tourID: TourID, completion: @escaping (Result<TourDetails, Error>) -> Void) {
+		let headers: HTTPHeaders = [
+			"Accept": "application/json"
+		]
+		let urlString = "https://bitsfabrik.com/projekte/imaginary/api/tours/\(tourID.value)/"
+		
+		AF.request(urlString, method: .get, headers: headers)
+			.validate()
+			.response { response in
+				do {
+					let jsonData = try getData(fromResponse: response)
+					
+					let tourDetails = try JSONDecoder().decode(JsonTourDetails.self, from: jsonData)
+					
+					guard let domainTourDetails = tourDetails.mapToDomain() else {
+						completion(.failure(CustomError.ObjectParsingError))
+						return
+					}
+					completion(.success(domainTourDetails))
+					
+				} catch let error {
+					print(error)
+					completion(.failure(error))
+				}
+			}
+	}
+	
+	
 	
 	private func getData(fromResponse response: AFDataResponse<Data?>) throws -> Data {
 		switch response.result {
@@ -66,7 +100,7 @@ struct NetworkService {
 			
 		case .success(let data):
 			guard let data = data else {
-				throw NSError(domain: "Invalid Response", code: -1)
+				throw CustomError.InvalidResponse
 			}
 			
 			return data

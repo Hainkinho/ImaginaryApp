@@ -40,4 +40,19 @@ extension NetworkService {
 		}
 	}
 	
+	
+	func fetchTourDetails(forTourID tourID: TourID) async throws -> TourDetails {
+		return try await withCheckedThrowingContinuation { continuation in
+			self.fetchTourDetails(forTourID: tourID, completion: { result in
+				switch result {
+				case .success(let tours):
+					continuation.resume(returning: tours)
+					return
+				case .failure(let error):
+					continuation.resume(throwing: error)
+					return
+				}
+			})
+		}
+	}
 }
