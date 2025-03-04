@@ -23,6 +23,8 @@
 		5C20CDCD2D76FDA9008139BE /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDCC2D76FDA9008139BE /* CompositionRoot.swift */; };
 		5C20CDCF2D7701D5008139BE /* AppLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDCE2D7701D5008139BE /* AppLoadingScreen.swift */; };
 		5C20CDD12D77028C008139BE /* MainPagesCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDD02D77028C008139BE /* MainPagesCreator.swift */; };
+		5C20CDD32D770792008139BE /* HomeContainerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDD22D770792008139BE /* HomeContainerPage.swift */; };
+		5C20CDD52D770A4C008139BE /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDD42D770A4C008139BE /* HomePageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		5C20CDCC2D76FDA9008139BE /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 		5C20CDCE2D7701D5008139BE /* AppLoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadingScreen.swift; sourceTree = "<group>"; };
 		5C20CDD02D77028C008139BE /* MainPagesCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPagesCreator.swift; sourceTree = "<group>"; };
+		5C20CDD22D770792008139BE /* HomeContainerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPage.swift; sourceTree = "<group>"; };
+		5C20CDD42D770A4C008139BE /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				5C20CDBB2D76F366008139BE /* AdaptiveHomeNavigationLayout.swift */,
+				5C20CDD42D770A4C008139BE /* HomePageViewModel.swift */,
+				5C20CDD22D770792008139BE /* HomeContainerPage.swift */,
 				5C20CDB22D76E60A008139BE /* HomePage.swift */,
 				5C20CDB92D76F2C4008139BE /* HomeListCell.swift */,
 				5C20CDBF2D76F669008139BE /* DetailsPage.swift */,
@@ -194,6 +200,7 @@
 			files = (
 				5C20CDB72D76EB17008139BE /* Constants.swift in Sources */,
 				5C20CDC52D76FA7A008139BE /* TourDetails.swift in Sources */,
+				5C20CDD52D770A4C008139BE /* HomePageViewModel.swift in Sources */,
 				5C20CDCB2D76FCE1008139BE /* AppState.swift in Sources */,
 				5C20CDBC2D76F366008139BE /* AdaptiveHomeNavigationLayout.swift in Sources */,
 				5C20CDC72D76FB85008139BE /* AppStateStore.swift in Sources */,
@@ -203,6 +210,7 @@
 				5C20CDCF2D7701D5008139BE /* AppLoadingScreen.swift in Sources */,
 				5C20CDC32D76FA34008139BE /* Tour.swift in Sources */,
 				5C20CDAF2D76E415008139BE /* MainApp.swift in Sources */,
+				5C20CDD32D770792008139BE /* HomeContainerPage.swift in Sources */,
 				5C20CDCD2D76FDA9008139BE /* CompositionRoot.swift in Sources */,
 				5C20CDD12D77028C008139BE /* MainPagesCreator.swift in Sources */,
 				5C20CDB52D76E7C0008139BE /* URL + Helpers.swift in Sources */,

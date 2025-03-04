@@ -13,10 +13,13 @@ struct MainPagesCreator {
 	
 	let appStateStore: AppStateStore
 	
-	func createHomePage() -> HomePage {
-		let tours = appStateStore.curAppState.allTours
+	func createHomePage() -> HomeContainerPage {
+		let vm = HomePageViewModel()
 		
-		return HomePage(tours: tours)
+		vm.subcribe(appStatePublisher: appStateStore.$curAppState.eraseToAnyPublisher())
+		vm.update(withNewAppState: appStateStore.curAppState)
+		
+		return HomeContainerPage(vm: vm)
 	}
 	
 	

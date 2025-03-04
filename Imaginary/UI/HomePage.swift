@@ -39,17 +39,10 @@ extension View {
 }
 
 
-
 struct HomePage: View {
 	
-	enum HomePageItemsFilter: CaseIterable {
-		case None
-		case Top5Only
-	}
-	
-	@State private var activeItemsFilter = HomePageItemsFilter.None
-	
 	let tours: [Tour]
+	@Binding var activeItemsFilter: HomePageItemsFilter
 	
 	var body: some View {
 		VStack(spacing: 0) {
@@ -111,6 +104,7 @@ struct HomePage: View {
 
 #Preview {
 	HomePage(
-		tours: (0 ... 100).map { Tour.createExample(withID: "\($0)") }
+		tours: (0 ... 100).map { Tour.createExample(withID: "\($0)") },
+		activeItemsFilter: .constant(.None)
 	)
 }

@@ -13,7 +13,7 @@ struct AdaptiveHomeNavigationLayout: View {
 	
 	@Environment(\.horizontalSizeClass) private var sizeClass
 	
-	let createHomePage: () -> HomePage
+	let createHomePage: () -> HomeContainerPage
 	
 	var body: some View {
 		if sizeClass == .compact {
