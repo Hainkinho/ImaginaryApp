@@ -39,7 +39,9 @@ class HomePageViewModel: ObservableObject {
 	
 	func update(withNewAppState newAppState: AppState) {
 		self.allTours = newAppState.allTours
-		self.top5Tours = Array(newAppState.allTours.prefix(upTo: 5)) // TODO:
+		self.top5Tours = newAppState.top5ToursIDs.compactMap({ tourID in
+			newAppState.toursDict[tourID]
+		})
 		
 		self.activeTours = getActiveTours(fromFilter: filter)
 	}
