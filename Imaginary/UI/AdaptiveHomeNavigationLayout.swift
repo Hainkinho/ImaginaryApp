@@ -12,6 +12,15 @@ import SwiftUI
 
 extension View {
 	
+	private func optionsButtonView() -> some View {
+		Image(systemName: "ellipsis")
+			.rotationEffect(.init(degrees: 90))
+			.foregroundStyle(.black)
+			.frame(width: 44, height: 44)  // Ensures the button is easily tappable
+			.background(Color.white.opacity(0.00001))
+	}
+	
+	
 	func setupHomePageNavbar(tappedMoreButton: @escaping () -> Void) -> some View {
 		self
 			.toolbar {
@@ -29,11 +38,7 @@ extension View {
 				
 				ToolbarItem(placement: .topBarTrailing) {
 					Button(action: tappedMoreButton) {
-						Image(systemName: "ellipsis")
-							.rotationEffect(.init(degrees: 90))
-							.foregroundStyle(.black)
-							.frame(width: 44, height: 44)  // Ensures the button is easily tappable
-							.background(Color.white.opacity(0.00001))
+						optionsButtonView()
 					}
 				}
 			}
@@ -62,11 +67,7 @@ extension View {
 				
 				ToolbarItem(placement: .topBarTrailing) {
 					Button(action: tappedMoreButton) {
-						Image(systemName: "ellipsis")
-							.rotationEffect(.init(degrees: 90))
-							.foregroundStyle(.black)
-							.frame(width: 44, height: 44)  // Ensures the button is easily tappable
-							.background(Color.white.opacity(0.00001))
+						optionsButtonView()
 					}
 				}
 			}

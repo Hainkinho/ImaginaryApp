@@ -27,7 +27,7 @@ struct HomePage: View {
 		VStack(spacing: 0) {
 			
 			topFilterToolbar
-			.padding(.top, 1) // Prevents that the buttons background Color
+				.padding(.top, 1) // Ensures the button's background color doesn't extend into the safe area.
 			
 			List {
 				ForEach(tours) { tour in
