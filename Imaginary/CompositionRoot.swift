@@ -39,32 +39,13 @@ struct CompositionRoot {
 		let top5Tours = (try? await networkService.fetchTop5Tours()) ?? []
 		
 		
-		tours.forEach({ tour in
-			appStateStore.insert(tour: tour)
-		})
+		// MARK: - Set final AppState in AppStateStore
+		
+		appStateStore.set(tours: tours)
 		
 		let top5TourIDs = top5Tours.map(\.id)
 		appStateStore.set(top5TourIDs: top5TourIDs)
 		
 		return CompositionRootResult(mainPagesCreator: mainPagesCreator)
-	}
-	
-	
-	private func addDummyData(toAppStateStore appStateStore: AppStateStore) {
-		(0 ... 100)
-			.map {
-				Tour(id: TourID(value: "\($0)"), title: "Title", shortDescription: "Descrition", snapshotImageURL: URL.placeholderImageURL, startDate: Date().addingTimeInterval(-100), endDate: Date(), price: 100)
-			}
-			.forEach { tour in
-				appStateStore.insert(tour: tour)
-			}
-		
-		(0 ... 100)
-			.map {
-				TourDetails(id: TourID(value: "\($0)"), longDescription: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam", fullResImageURL: URL.placeholderImageURL)
-			}
-			.forEach { tourDetails in
-				appStateStore.insert(tourDetails: tourDetails)
-			}
 	}
 }

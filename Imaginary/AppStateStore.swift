@@ -26,6 +26,10 @@ class AppStateStore: ObservableObject {
 		self.curAppState = initialAppState
 	}
 	
+	
+	func set(tours: [Tour]) {
+		self.curAppState = curAppState.set(tours: tours)
+	}
 
 	func insert(tour: Tour) {
 		self.curAppState = curAppState.insert(tour: tour)

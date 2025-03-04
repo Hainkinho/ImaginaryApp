@@ -30,6 +30,15 @@ struct AppState: Equatable {
 
 extension AppState {
 	
+	func set(tours: [Tour]) -> AppState {
+		var toursDict = [TourID : Tour]()
+		for tour in tours {
+			toursDict[tour.id] = tour
+		}
+		return AppState(toursDict: toursDict, top5ToursIDs: self.top5ToursIDs, tourDetailsDict: self.tourDetailsDict)
+	}
+	
+	
 	func insert(tour: Tour) -> AppState {
 		var newToursDict = toursDict
 		newToursDict[tour.id] = tour
