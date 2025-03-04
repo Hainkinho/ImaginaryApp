@@ -13,6 +13,7 @@ struct MainPagesCreator {
 	
 	let appStateStore: AppStateStore
 	let homeNavigationRouter: HomeNavigationRouter
+	let fetchAllToursUsecase: FetchAllToursUsecase
 	let fetchTourDetailsUsecase: FetchTourDetailsUsecase
 	
 	
@@ -28,7 +29,7 @@ struct MainPagesCreator {
 	}
 	
 	func createHomePage(listButtonConfig: HomePageListButtonConfig) -> HomeContainerPage {
-		let vm = HomePageViewModel()
+		let vm = HomePageViewModel(fetchAllToursUsecase: fetchAllToursUsecase)
 		
 		vm.subcribe(appStatePublisher: appStateStore.appStateDidChangePublisher)
 		vm.update(withNewAppState: appStateStore.curAppState)

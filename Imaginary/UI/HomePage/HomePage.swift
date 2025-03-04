@@ -50,7 +50,8 @@ struct HomePage: View {
 	
 	let listButtonConfig: HomePageListButtonConfig
 	
-//	let tappedOnCell: (Tour) -> Void
+	let refreshAllTours: () async -> Void
+	
 	
 	var body: some View {
 		VStack(spacing: 0) {
@@ -87,6 +88,9 @@ struct HomePage: View {
 				}
 			}
 			.listStyle(.plain)
+			.refreshable {
+				await refreshAllTours()
+			}
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.background(Color.white)
@@ -129,6 +133,7 @@ struct HomePage: View {
 	HomePage(
 		tours: (0 ... 100).map { Tour.createExample(withID: "\($0)") },
 		activeItemsFilter: .constant(.None),
-		listButtonConfig: .NavigationLink
+		listButtonConfig: .NavigationLink,
+		refreshAllTours: {}
 	)
 }

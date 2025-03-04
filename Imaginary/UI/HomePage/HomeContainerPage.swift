@@ -26,7 +26,10 @@ struct HomeContainerPage: View {
 		HomePage(
 			tours: vm.activeTours,
 			activeItemsFilter: activeItemsFilterBinding,
-			listButtonConfig: listButtonConfig
+			listButtonConfig: listButtonConfig,
+			refreshAllTours: {
+				await vm.refreshAllTours()
+			}
 		)
 	}
 	

@@ -26,12 +26,17 @@ struct CompositionRoot {
 			networkService: networkService,
 			appStateStore: appStateStore
 		)
+		let fetchAllToursUsecase = FetchAllToursUsecase(
+			networkService: networkService,
+			appStateStore: appStateStore
+		)
 		
 		let homeNavigationRouter = HomeNavigationRouter()
 		
 		let mainPagesCreator = MainPagesCreator(
 			appStateStore: appStateStore,
 			homeNavigationRouter: homeNavigationRouter,
+			fetchAllToursUsecase: fetchAllToursUsecase,
 			fetchTourDetailsUsecase: fetchTourDetailsUsecase
 		)
 		

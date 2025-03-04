@@ -35,6 +35,7 @@
 		5C20CE022D772CD5008139BE /* AlertInfoModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDFF2D772CD5008139BE /* AlertInfoModifier.swift */; };
 		5C20CE032D772CD5008139BE /* UIAlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CE002D772CD5008139BE /* UIAlertInformation.swift */; };
 		5C75D9B32D77307A0061C9DB /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D9B22D77307A0061C9DB /* AsyncButton.swift */; };
+		5C75D9B52D7733FE0061C9DB /* FetchAllToursUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75D9B42D7733FE0061C9DB /* FetchAllToursUsecase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		5C20CDFF2D772CD5008139BE /* AlertInfoModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfoModifier.swift; sourceTree = "<group>"; };
 		5C20CE002D772CD5008139BE /* UIAlertInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertInformation.swift; sourceTree = "<group>"; };
 		5C75D9B22D77307A0061C9DB /* AsyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
+		5C75D9B42D7733FE0061C9DB /* FetchAllToursUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllToursUsecase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				5C20CDF72D772987008139BE /* FetchTourDetailsUsecase.swift */,
+				5C75D9B42D7733FE0061C9DB /* FetchAllToursUsecase.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				5C20CDC02D76F669008139BE /* DetailsPage.swift in Sources */,
 				5C20CDE52D7716ED008139BE /* Models.swift in Sources */,
 				5C20CDBA2D76F2C4008139BE /* HomeListCell.swift in Sources */,
+				5C75D9B52D7733FE0061C9DB /* FetchAllToursUsecase.swift in Sources */,
 				5C20CDB32D76E60A008139BE /* HomePage.swift in Sources */,
 				5C20CDCF2D7701D5008139BE /* AppLoadingScreen.swift in Sources */,
 				5C20CDC32D76FA34008139BE /* Tour.swift in Sources */,

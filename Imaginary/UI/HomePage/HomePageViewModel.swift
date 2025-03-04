@@ -21,12 +21,17 @@ class HomePageViewModel: ObservableObject {
 	@Published var activeTours: [Tour] = []
 	@Published var filter: HomePageItemsFilter = .None
 	
+	@Published var activeAlert: UIAlertInformation? = nil
+	
 	private var allTours: [Tour] = []
 	private var top5Tours: [Tour] = []
 	
+	private let fetchAllToursUsecase: FetchAllToursUsecase
 	private var subscription: AnyCancellable? = nil
 	
-	init() {}
+	init(fetchAllToursUsecase: FetchAllToursUsecase) {
+		self.fetchAllToursUsecase = fetchAllToursUsecase
+	}
 	
 	
 	func subcribe(appStatePublisher: AnyPublisher<AppState, Never>) {
@@ -44,6 +49,25 @@ class HomePageViewModel: ObservableObject {
 		})
 		
 		self.activeTours = getActiveTours(fromFilter: filter)
+	}
+	
+	
+	func refreshAllTours() async {
+		do {
+			let allTours = try await fetchAllToursUsecase.fetch()
+			
+			await MainActor.run {
+				self.allTours = allTours
+			}
+		} catch let error {
+			print(error)
+			
+			await MainActor.run {
+				self.activeAlert = .somethingWentWrong(
+					localizedMessage: String(localized: "We could not fetch the tours from the remote server. Please try again later...", comment: "Error Alert body - HomePage")
+				)
+			}
+		}
 	}
 	
 	
