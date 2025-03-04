@@ -14,6 +14,15 @@ struct AppState: Equatable {
 	let toursDict: [TourID: Tour]
 	let tourDetailsDict: [TourID: TourDetails]
 	
+	var allTours: [Tour] {
+		Array(toursDict.values).sorted { $0.id < $1.id }
+	}
+	
+	var allTourDetails: [TourDetails] {
+		Array(tourDetailsDict.values).sorted { $0.id < $1.id }
+	}
+	
+	
 	static let empty = AppState(toursDict: [:], tourDetailsDict: [:])
 }
 

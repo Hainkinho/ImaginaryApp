@@ -22,6 +22,7 @@
 		5C20CDCB2D76FCE1008139BE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDCA2D76FCE1008139BE /* AppState.swift */; };
 		5C20CDCD2D76FDA9008139BE /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDCC2D76FDA9008139BE /* CompositionRoot.swift */; };
 		5C20CDCF2D7701D5008139BE /* AppLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDCE2D7701D5008139BE /* AppLoadingScreen.swift */; };
+		5C20CDD12D77028C008139BE /* MainPagesCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDD02D77028C008139BE /* MainPagesCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		5C20CDCA2D76FCE1008139BE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		5C20CDCC2D76FDA9008139BE /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 		5C20CDCE2D7701D5008139BE /* AppLoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadingScreen.swift; sourceTree = "<group>"; };
+		5C20CDD02D77028C008139BE /* MainPagesCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPagesCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				5C20CDCE2D7701D5008139BE /* AppLoadingScreen.swift */,
 				5C20CDB62D76EB17008139BE /* Constants.swift */,
 				5C20CDCC2D76FDA9008139BE /* CompositionRoot.swift */,
+				5C20CDD02D77028C008139BE /* MainPagesCreator.swift */,
 				5C20CDC62D76FB85008139BE /* AppStateStore.swift */,
 				5C20CDCA2D76FCE1008139BE /* AppState.swift */,
 				5C20CDC12D76FA1F008139BE /* DomainModels */,
@@ -201,6 +204,7 @@
 				5C20CDC32D76FA34008139BE /* Tour.swift in Sources */,
 				5C20CDAF2D76E415008139BE /* MainApp.swift in Sources */,
 				5C20CDCD2D76FDA9008139BE /* CompositionRoot.swift in Sources */,
+				5C20CDD12D77028C008139BE /* MainPagesCreator.swift in Sources */,
 				5C20CDB52D76E7C0008139BE /* URL + Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

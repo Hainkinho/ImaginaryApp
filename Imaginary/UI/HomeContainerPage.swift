@@ -13,10 +13,12 @@ struct HomeContainerPage: View {
 	
 	@Environment(\.horizontalSizeClass) private var sizeClass
 	
+	let createHomePage: () -> HomePage
+	
 	var body: some View {
 		if sizeClass == .compact {
 			NavigationStack {
-				HomePage()
+				createHomePage()
 					.navigationBarTitleDisplayMode(.inline)
 					.setupHomePageNavbar(tappedMoreButton: {
 						// TODO: Add logic here. The assignment doesn't specify details, so this needs clarification.
@@ -25,7 +27,7 @@ struct HomeContainerPage: View {
 		} else {
 			NavigationStack {
 				HStack(spacing: 0) {
-					HomePage()
+					createHomePage()
 					
 					VStack {
 						Image(Constants.companyLogoImageString)

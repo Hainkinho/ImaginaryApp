@@ -10,7 +10,7 @@
 import Foundation
 
 struct CompositionRootResult {
-	
+	let mainPagesCreator: MainPagesCreator
 }
 
 
@@ -29,7 +29,9 @@ struct CompositionRoot {
 		
 		addDummyData(toAppStateStore: appStateStore)
 		
-		return CompositionRootResult()
+		let mainPagesCreator = MainPagesCreator(appStateStore: appStateStore)
+		
+		return CompositionRootResult(mainPagesCreator: mainPagesCreator)
 	}
 	
 	

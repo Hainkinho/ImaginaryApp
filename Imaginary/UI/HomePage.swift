@@ -49,6 +49,8 @@ struct HomePage: View {
 	
 	@State private var activeItemsFilter = HomePageItemsFilter.None
 	
+	let tours: [Tour]
+	
 	var body: some View {
 		VStack(spacing: 0) {
 			
@@ -56,14 +58,14 @@ struct HomePage: View {
 			.padding(.top, 1) // Prevents that the buttons background Color
 			
 			List {
-				ForEach(1 ... 100, id: \.self) { i in
+				ForEach(tours) { tour in
 					Button(action: {}) {
 						HomeListCell(
-							title: "Titel",
-							description: "Short Description",
-							imageURL: URL.placeholderImageURL,
-							endDate: Date(),
-							localizedPrice: "XX€"
+							title: tour.title,
+							description: tour.shortDescription,
+							imageURL: tour.snapshotImageURL,
+							endDate: tour.endDate,
+							localizedPrice: tour.price.description // TODO: 
 						)
 					}
 				}
@@ -106,6 +108,9 @@ struct HomePage: View {
 }
 
 
+
 #Preview {
-	HomePage()
+	HomePage(
+		tours: (0 ... 100).map { Tour.createExample(withID: "\($0)") }
+	)
 }
