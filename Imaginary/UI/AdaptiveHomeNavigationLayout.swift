@@ -112,11 +112,14 @@ class HomeNavigationRouter: ObservableObject {
 	}
 }
 
+
+
+
 struct AdaptiveHomeNavigationLayout: View {
 	
-	@Environment(\.horizontalSizeClass) private var sizeClass
-	
 	@StateObject var homeNavigationRouter: HomeNavigationRouter
+	
+	@State private var deviceOrientation: DeviceOrientation = .Portrait
 	
 	let createHomePage: (HomePageListButtonConfig) -> HomeContainerPage
 	let createDetailsPage: (TourID) -> DetailsContainerPage
@@ -124,41 +127,46 @@ struct AdaptiveHomeNavigationLayout: View {
 	let getTourTitle: (TourID) -> String?
 	
 	var body: some View {
-		if sizeClass == .compact {
-			NavigationStack {
-				createHomePage(.NavigationLink)
-					.navigationBarTitleDisplayMode(.inline)
-					.setupHomePageNavbar(tappedMoreButton: {
+		VStack {
+			switch deviceOrientation {
+			case .Portrait:
+				NavigationStack {
+					createHomePage(.NavigationLink)
+						.navigationBarTitleDisplayMode(.inline)
+						.setupHomePageNavbar(tappedMoreButton: {
+							// TODO: Add logic here. The assignment doesn't specify details, so this needs clarification.
+						})
+						.navigationDestination(for: TourID.self) { tourID in
+							createDetailsPage(tourID)
+								.modifier(CustomBackButtonToolbar(tourTitle: getTourTitle(tourID)))
+						}
+				}
+				
+			case .Landscape:
+				NavigationStack {
+					HStack(spacing: 0) {
+						createHomePage(.Button(action: { tourID in
+							homeNavigationRouter.showTourDetails(forTourID: tourID)
+						}))
+						
+						VStack {
+							if let selectedTourID = homeNavigationRouter.selectedTourID {
+								createDetailsPage(selectedTourID)
+							} else {
+								Image(Constants.companyLogoImageString)
+									.resizable()
+									.frame(width: 100, height: 100)
+							}
+						}
+						.frame(maxWidth: .infinity, maxHeight: .infinity)
+					}
+					.setupLandscapeHomeNavbar(tourTitle: selectedTourTitle, tappedMoreButton: {
 						// TODO: Add logic here. The assignment doesn't specify details, so this needs clarification.
 					})
-					.navigationDestination(for: TourID.self) { tourID in
-						createDetailsPage(tourID)
-							.modifier(CustomBackButtonToolbar(tourTitle: getTourTitle(tourID)))
-					}
-			}
-		} else {
-			NavigationStack {
-				HStack(spacing: 0) {
-					createHomePage(.Button(action: { tourID in
-						homeNavigationRouter.showTourDetails(forTourID: tourID)
-					}))
-					
-					VStack {
-						if let selectedTourID = homeNavigationRouter.selectedTourID {
-							createDetailsPage(selectedTourID)
-						} else {
-							Image(Constants.companyLogoImageString)
-								.resizable()
-								.frame(width: 100, height: 100)
-						}
-					}
-					.frame(maxWidth: .infinity, maxHeight: .infinity)
 				}
-				.setupLandscapeHomeNavbar(tourTitle: selectedTourTitle, tappedMoreButton: {
-					// TODO: Add logic here. The assignment doesn't specify details, so this needs clarification.
-				})
 			}
 		}
+		.deviceOrientation(value: $deviceOrientation)
 	}
 	
 	private var selectedTourTitle: String? {
