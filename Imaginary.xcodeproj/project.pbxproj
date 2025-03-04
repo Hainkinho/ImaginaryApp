@@ -26,6 +26,9 @@
 		5C20CDD32D770792008139BE /* HomeContainerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDD22D770792008139BE /* HomeContainerPage.swift */; };
 		5C20CDD52D770A4C008139BE /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDD42D770A4C008139BE /* HomePageViewModel.swift */; };
 		5C20CDDC2D771567008139BE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C20CDDB2D771567008139BE /* Alamofire */; };
+		5C20CDE22D7716E6008139BE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDE02D7716E6008139BE /* NetworkService.swift */; };
+		5C20CDE52D7716ED008139BE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDE42D7716ED008139BE /* Models.swift */; };
+		5C20CDE72D7718A6008139BE /* NetworkService + AsyncAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDE62D7718A6008139BE /* NetworkService + AsyncAwait.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		5C20CDD02D77028C008139BE /* MainPagesCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPagesCreator.swift; sourceTree = "<group>"; };
 		5C20CDD22D770792008139BE /* HomeContainerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerPage.swift; sourceTree = "<group>"; };
 		5C20CDD42D770A4C008139BE /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
+		5C20CDE02D7716E6008139BE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5C20CDE42D7716ED008139BE /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5C20CDE62D7718A6008139BE /* NetworkService + AsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService + AsyncAwait.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 				5C20CDCA2D76FCE1008139BE /* AppState.swift */,
 				5C20CDC12D76FA1F008139BE /* DomainModels */,
 				5C20CDB82D76F2B3008139BE /* UI */,
+				5C20CDE12D7716E6008139BE /* Networking */,
 				5C20CDB42D76E7C0008139BE /* URL + Helpers.swift */,
 				5C20CDA82D76E415008139BE /* Assets.xcassets */,
 			);
@@ -133,6 +140,16 @@
 				5C20CDB92D76F2C4008139BE /* HomeListCell.swift */,
 			);
 			path = HomePage;
+			sourceTree = "<group>";
+		};
+		5C20CDE12D7716E6008139BE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5C20CDE02D7716E6008139BE /* NetworkService.swift */,
+				5C20CDE62D7718A6008139BE /* NetworkService + AsyncAwait.swift */,
+				5C20CDE42D7716ED008139BE /* Models.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,9 +233,12 @@
 				5C20CDC52D76FA7A008139BE /* TourDetails.swift in Sources */,
 				5C20CDD52D770A4C008139BE /* HomePageViewModel.swift in Sources */,
 				5C20CDCB2D76FCE1008139BE /* AppState.swift in Sources */,
+				5C20CDE72D7718A6008139BE /* NetworkService + AsyncAwait.swift in Sources */,
 				5C20CDBC2D76F366008139BE /* AdaptiveHomeNavigationLayout.swift in Sources */,
+				5C20CDE22D7716E6008139BE /* NetworkService.swift in Sources */,
 				5C20CDC72D76FB85008139BE /* AppStateStore.swift in Sources */,
 				5C20CDC02D76F669008139BE /* DetailsPage.swift in Sources */,
+				5C20CDE52D7716ED008139BE /* Models.swift in Sources */,
 				5C20CDBA2D76F2C4008139BE /* HomeListCell.swift in Sources */,
 				5C20CDB32D76E60A008139BE /* HomePage.swift in Sources */,
 				5C20CDCF2D7701D5008139BE /* AppLoadingScreen.swift in Sources */,

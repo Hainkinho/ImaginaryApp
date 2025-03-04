@@ -23,11 +23,9 @@ struct CompositionRoot {
 		
 		// TODO: fetch tours and add it to the appStateStore
 		
-		#if DEBUG
-		try? await Task.sleep(for: .seconds(2))
-		#endif
+		let networkService = NetworkService()
 		
-		addDummyData(toAppStateStore: appStateStore)
+//		addDummyData(toAppStateStore: appStateStore)
 		
 		let homeNavigationRouter = HomeNavigationRouter()
 		
@@ -35,6 +33,19 @@ struct CompositionRoot {
 			appStateStore: appStateStore,
 			homeNavigationRouter: homeNavigationRouter
 		)
+		
+		let tours = (try? await networkService.fetchAllTours()) ?? []
+		let top5Tours = (try? await networkService.fetchTop5Tours()) ?? []
+		
+		
+		tours.forEach({ tour in
+			appStateStore.insert(tour: tour)
+		})
+		
+		top5Tours.forEach({
+			appStateStore.insert(tour: $0)
+		})
+		
 		
 		return CompositionRootResult(mainPagesCreator: mainPagesCreator)
 	}
