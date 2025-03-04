@@ -32,6 +32,8 @@
 		5C20CDF42D7727C2008139BE /* DetailsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDF32D7727C2008139BE /* DetailsPageViewModel.swift */; };
 		5C20CDF62D7727CC008139BE /* DetailsContainerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDF52D7727CC008139BE /* DetailsContainerPage.swift */; };
 		5C20CDF82D772987008139BE /* FetchTourDetailsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDF72D772987008139BE /* FetchTourDetailsUsecase.swift */; };
+		5C20CE022D772CD5008139BE /* AlertInfoModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CDFF2D772CD5008139BE /* AlertInfoModifier.swift */; };
+		5C20CE032D772CD5008139BE /* UIAlertInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20CE002D772CD5008139BE /* UIAlertInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		5C20CDF32D7727C2008139BE /* DetailsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPageViewModel.swift; sourceTree = "<group>"; };
 		5C20CDF52D7727CC008139BE /* DetailsContainerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsContainerPage.swift; sourceTree = "<group>"; };
 		5C20CDF72D772987008139BE /* FetchTourDetailsUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTourDetailsUsecase.swift; sourceTree = "<group>"; };
+		5C20CDFF2D772CD5008139BE /* AlertInfoModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertInfoModifier.swift; sourceTree = "<group>"; };
+		5C20CE002D772CD5008139BE /* UIAlertInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 		5C20CDB82D76F2B3008139BE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5C20CE012D772CD5008139BE /* shared */,
 				5C20CDBB2D76F366008139BE /* AdaptiveHomeNavigationLayout.swift */,
 				5C20CDD62D770C32008139BE /* HomePage */,
 				5C20CDE82D772009008139BE /* DetailsPage */,
@@ -175,6 +180,15 @@
 				5C20CDF72D772987008139BE /* FetchTourDetailsUsecase.swift */,
 			);
 			path = Usecases;
+			sourceTree = "<group>";
+		};
+		5C20CE012D772CD5008139BE /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				5C20CDFF2D772CD5008139BE /* AlertInfoModifier.swift */,
+				5C20CE002D772CD5008139BE /* UIAlertInformation.swift */,
+			);
+			path = shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +277,8 @@
 				5C20CDE72D7718A6008139BE /* NetworkService + AsyncAwait.swift in Sources */,
 				5C20CDBC2D76F366008139BE /* AdaptiveHomeNavigationLayout.swift in Sources */,
 				5C20CDE22D7716E6008139BE /* NetworkService.swift in Sources */,
+				5C20CE022D772CD5008139BE /* AlertInfoModifier.swift in Sources */,
+				5C20CE032D772CD5008139BE /* UIAlertInformation.swift in Sources */,
 				5C20CDC72D76FB85008139BE /* AppStateStore.swift in Sources */,
 				5C20CDF42D7727C2008139BE /* DetailsPageViewModel.swift in Sources */,
 				5C20CDC02D76F669008139BE /* DetailsPage.swift in Sources */,

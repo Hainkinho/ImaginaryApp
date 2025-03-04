@@ -15,6 +15,8 @@ class DetailsPageViewModel: ObservableObject {
 	@Published var tour: Tour
 	@Published var tourDetails: TourDetails? = nil
 	
+	@Published var activeAlert: UIAlertInformation? = nil
+	
 	private let tourID: TourID
 	private let fetchTourDetailsUsecase: FetchTourDetailsUsecase
 	private var subscription: AnyCancellable? = nil
@@ -50,6 +52,11 @@ class DetailsPageViewModel: ObservableObject {
 			}
 		} catch let error {
 			print(error)
+			await MainActor.run {
+				self.activeAlert = .somethingWentWrong(
+					localizedMessage: String(localized: "We could not fetch the current tour details. Please try again later.", comment: "Alert message - DetailsPageViewModel")
+				)
+			}
 		}
 	}
 	

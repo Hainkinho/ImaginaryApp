@@ -25,6 +25,7 @@ struct DetailsContainerPage: View {
 			startDate: vm.tour.startDate,
 			endDate: vm.tour.endDate
 		)
+		.customAlertInfo($vm.activeAlert)
 		.task {
 			await viewDidAppear()
 		}
