@@ -50,7 +50,7 @@ struct HomePage: View {
 	@State private var activeItemsFilter = HomePageItemsFilter.None
 	
 	var body: some View {
-		NavigationStack {
+		VStack(spacing: 0) {
 			
 			topFilterToolbar
 			.padding(.top, 1) // Prevents that the buttons background Color
@@ -69,11 +69,9 @@ struct HomePage: View {
 				}
 			}
 			.listStyle(.plain)
-			.navigationBarTitleDisplayMode(.inline)
-			.setupHomePageNavbar(tappedMoreButton: {
-				// TODO: Add logic here. The assignment doesn't specify details, so this needs clarification.
-			})
 		}
+		.frame(maxWidth: .infinity, maxHeight: .infinity)
+		.background(Color.white)
 	}
 	
 	
