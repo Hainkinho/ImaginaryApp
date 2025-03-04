@@ -8,11 +8,19 @@
 	
 
 import Foundation
-
+import Combine
 
 class AppStateStore: ObservableObject {
 	
 	@Published private(set) var curAppState: AppState
+	
+	var appStateDidChangePublisher: AnyPublisher<AppState, Never> {
+		self.$curAppState
+			.throttle(for: 0.2, scheduler: DispatchQueue.main, latest: true)
+			.removeDuplicates()
+			.receive(on: DispatchQueue.main)
+			.eraseToAnyPublisher()
+	}
 	
 	init(initialAppState: AppState) {
 		self.curAppState = initialAppState

@@ -16,7 +16,7 @@ struct MainPagesCreator {
 	func createHomePage() -> HomeContainerPage {
 		let vm = HomePageViewModel()
 		
-		vm.subcribe(appStatePublisher: appStateStore.$curAppState.eraseToAnyPublisher())
+		vm.subcribe(appStatePublisher: appStateStore.appStateDidChangePublisher)
 		vm.update(withNewAppState: appStateStore.curAppState)
 		
 		return HomeContainerPage(vm: vm)
