@@ -12,14 +12,14 @@ import SwiftUI
 struct AppLoadingScreen: View {
 
 	var body: some View {
-		VStack {
+		VStack(spacing: 10) {
 			ProgressView()
-				.progressViewStyle(CircularProgressViewStyle(tint: .white))
+				.progressViewStyle(CircularProgressViewStyle(tint: .black))
 			
-			Text("loading...", comment: "Subtitle - AppLoadingScreen")
-				.foregroundStyle(.white)
+			Text("loading data...", comment: "Subtitle - AppLoadingScreen")
+				.foregroundStyle(.black)
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background(Color.black)
+		.background(Color.white)
 	}
 }
