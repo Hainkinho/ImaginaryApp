@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-struct HomeContainerPage: View {
+struct AdaptiveHomeNavigationLayout: View {
 	
 	@Environment(\.horizontalSizeClass) private var sizeClass
 	
