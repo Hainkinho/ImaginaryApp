@@ -37,6 +37,7 @@ struct ContentView: View {
 				AppLoadingScreen()
 			}
 		}
+		.preferredColorScheme(.light)
 		.task {
 			await viewDidAppear()
 		}
