@@ -24,6 +24,9 @@ struct MainPagesCreator {
 				self.createHomePage(listButtonConfig: listButtonConfig)
 			}, createDetailsPage: { tourID in
 				self.createDetailsPage(forTourID: tourID)
+			},
+			getTourTitle: { tourID in
+				appStateStore.curAppState.toursDict[tourID]?.title
 			}
 		)
 	}

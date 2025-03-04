@@ -9,6 +9,100 @@
 
 import SwiftUI
 
+
+extension View {
+	
+	func setupHomePageNavbar(tappedMoreButton: @escaping () -> Void) -> some View {
+		self
+			.toolbar {
+				ToolbarItem(placement: .topBarLeading) {
+					HStack {
+						Image(Constants.companyLogoImageString)
+							.resizable()
+							.scaledToFit()
+							.frame(width: 40, height: 40)
+						
+						Text(Constants.appName)
+							.fontWeight(.bold)
+					}
+				}
+				
+				ToolbarItem(placement: .topBarTrailing) {
+					Button(action: tappedMoreButton) {
+						Image(systemName: "ellipsis")
+							.rotationEffect(.init(degrees: 90))
+							.foregroundStyle(.black)
+							.frame(width: 44, height: 44)  // Ensures the button is easily tappable
+							.background(Color.white.opacity(0.00001))
+					}
+				}
+			}
+	}
+	
+	
+	func setupLandscapeHomeNavbar(tourTitle: String?, tappedMoreButton: @escaping () -> Void) -> some View {
+		self
+			.toolbar {
+				ToolbarItem(placement: .topBarLeading) {
+					HStack {
+						Image(Constants.companyLogoImageString)
+							.resizable()
+							.scaledToFit()
+							.frame(width: 40, height: 40)
+						
+						if let tourTitle = tourTitle {
+							Text(tourTitle)
+								.fontWeight(.bold)
+						} else {
+							Text(Constants.appName)
+								.fontWeight(.bold)
+						}
+					}
+				}
+				
+				ToolbarItem(placement: .topBarTrailing) {
+					Button(action: tappedMoreButton) {
+						Image(systemName: "ellipsis")
+							.rotationEffect(.init(degrees: 90))
+							.foregroundStyle(.black)
+							.frame(width: 44, height: 44)  // Ensures the button is easily tappable
+							.background(Color.white.opacity(0.00001))
+					}
+				}
+			}
+	}
+}
+
+
+struct CustomBackButtonToolbar: ViewModifier {
+	
+	@Environment(\.dismiss) var dismiss
+	
+	let tourTitle: String?
+	
+	func body(content: Content) -> some View {
+		content
+			.navigationBarBackButtonHidden()
+			.toolbar {
+				ToolbarItem(placement: .topBarLeading) {
+					HStack {
+						Button(action: {
+							dismiss.callAsFunction()
+						}) {
+							Image(systemName: "arrow.left")
+								.foregroundStyle(.black)
+								.fontWeight(.bold)
+						}
+						
+						Text(tourTitle ?? "")
+							.fontWeight(.bold)
+					}
+				}
+			}
+	}
+}
+
+
 class HomeNavigationRouter: ObservableObject {
 	
 	@Published var selectedTourID: TourID?
@@ -27,6 +121,8 @@ struct AdaptiveHomeNavigationLayout: View {
 	let createHomePage: (HomePageListButtonConfig) -> HomeContainerPage
 	let createDetailsPage: (TourID) -> DetailsContainerPage
 	
+	let getTourTitle: (TourID) -> String?
+	
 	var body: some View {
 		if sizeClass == .compact {
 			NavigationStack {
@@ -37,10 +133,8 @@ struct AdaptiveHomeNavigationLayout: View {
 					})
 					.navigationDestination(for: TourID.self) { tourID in
 						createDetailsPage(tourID)
+							.modifier(CustomBackButtonToolbar(tourTitle: getTourTitle(tourID)))
 					}
-//					.navigationDestination(item: $homeNavigationRouter.selectedTourID) { tourID in
-//						createDetailsPage(tourID)
-//					}
 			}
 		} else {
 			NavigationStack {
@@ -60,10 +154,17 @@ struct AdaptiveHomeNavigationLayout: View {
 					}
 					.frame(maxWidth: .infinity, maxHeight: .infinity)
 				}
-				.setupHomePageNavbar(tappedMoreButton: {
+				.setupLandscapeHomeNavbar(tourTitle: selectedTourTitle, tappedMoreButton: {
 					// TODO: Add logic here. The assignment doesn't specify details, so this needs clarification.
 				})
 			}
 		}
+	}
+	
+	private var selectedTourTitle: String? {
+		guard let tourID = homeNavigationRouter.selectedTourID else {
+			return nil
+		}
+		return getTourTitle(tourID)
 	}
 }
