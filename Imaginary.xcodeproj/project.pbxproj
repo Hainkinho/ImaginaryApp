@@ -107,10 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				5C20CDBB2D76F366008139BE /* AdaptiveHomeNavigationLayout.swift */,
-				5C20CDD42D770A4C008139BE /* HomePageViewModel.swift */,
-				5C20CDD22D770792008139BE /* HomeContainerPage.swift */,
-				5C20CDB22D76E60A008139BE /* HomePage.swift */,
-				5C20CDB92D76F2C4008139BE /* HomeListCell.swift */,
+				5C20CDD62D770C32008139BE /* HomePage */,
 				5C20CDBF2D76F669008139BE /* DetailsPage.swift */,
 			);
 			path = UI;
@@ -123,6 +120,17 @@
 				5C20CDC42D76FA7A008139BE /* TourDetails.swift */,
 			);
 			path = DomainModels;
+			sourceTree = "<group>";
+		};
+		5C20CDD62D770C32008139BE /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				5C20CDD42D770A4C008139BE /* HomePageViewModel.swift */,
+				5C20CDD22D770792008139BE /* HomeContainerPage.swift */,
+				5C20CDB22D76E60A008139BE /* HomePage.swift */,
+				5C20CDB92D76F2C4008139BE /* HomeListCell.swift */,
+			);
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
