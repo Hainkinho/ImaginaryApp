@@ -78,7 +78,7 @@ struct HomePage: View {
 						.foregroundStyle(isSelected ? .white : .black)
 						.fontWeight(isSelected ? .bold : .medium)
 						.opacity(isSelected ? 1 : 0.8)
-						.frame(height: 70)
+						.frame(height: 55)
 						.frame(maxWidth: .infinity)
 						.background(isSelected ? Color.blue : .black.opacity(0.1))
 				}
