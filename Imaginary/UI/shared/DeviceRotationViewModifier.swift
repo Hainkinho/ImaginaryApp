@@ -23,14 +23,18 @@ struct DeviceRotationViewModifier: ViewModifier {
 	func body(content: Content) -> some View {
 		content
 			.onAppear {
-				self.deviceOrientation = getCurrentValue()
+				if let newValidOrientation = getCurrentValue() {
+					self.deviceOrientation = newValidOrientation
+				}
 			}
 			.onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-				self.deviceOrientation = getCurrentValue()
+				if let newValidOrientation = getCurrentValue() {
+					self.deviceOrientation = newValidOrientation
+				}
 			}
 	}
 	
-	func getCurrentValue() -> DeviceOrientation {
+	func getCurrentValue() -> DeviceOrientation? {
 		switch UIDevice.current.orientation {
 		case .landscapeLeft, .landscapeRight:
 			return .Landscape
@@ -38,7 +42,7 @@ struct DeviceRotationViewModifier: ViewModifier {
 			return .Portrait
 			
 		default:
-			return .Portrait
+			return nil
 		}
 	}
 }
