@@ -12,6 +12,7 @@ import Foundation
 struct AppState: Equatable {
 	
 	let toursDict: [TourID: Tour]
+	let top5ToursIDs: [TourID]
 	let tourDetailsDict: [TourID: TourDetails]
 	
 	var allTours: [Tour] {
@@ -23,7 +24,7 @@ struct AppState: Equatable {
 	}
 	
 	
-	static let empty = AppState(toursDict: [:], tourDetailsDict: [:])
+	static let empty = AppState(toursDict: [:], top5ToursIDs: [], tourDetailsDict: [:])
 }
 
 
@@ -33,7 +34,7 @@ extension AppState {
 		var newToursDict = toursDict
 		newToursDict[tour.id] = tour
 		
-		return AppState(toursDict: newToursDict, tourDetailsDict: self.tourDetailsDict)
+		return AppState(toursDict: newToursDict, top5ToursIDs: self.top5ToursIDs, tourDetailsDict: self.tourDetailsDict)
 	}
 	
 	
@@ -41,6 +42,11 @@ extension AppState {
 		var newTourDetailsDict = self.tourDetailsDict
 		newTourDetailsDict[tourDetails.id] = tourDetails
 		
-		return AppState(toursDict: self.toursDict, tourDetailsDict: newTourDetailsDict)
+		return AppState(toursDict: self.toursDict, top5ToursIDs: self.top5ToursIDs, tourDetailsDict: newTourDetailsDict)
+	}
+	
+	
+	func set(top5TourIDs: [TourID]) -> AppState {
+		return AppState(toursDict: self.toursDict, top5ToursIDs: top5TourIDs, tourDetailsDict: self.tourDetailsDict)
 	}
 }

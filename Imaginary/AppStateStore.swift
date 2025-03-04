@@ -35,4 +35,9 @@ class AppStateStore: ObservableObject {
 	func insert(tourDetails: TourDetails) {
 		self.curAppState = curAppState.insert(tourDetails: tourDetails)
 	}
+	
+	
+	func set(top5TourIDs: [TourID]) {
+		self.curAppState = curAppState.set(top5TourIDs: top5TourIDs)
+	}
 }

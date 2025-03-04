@@ -42,10 +42,8 @@ struct CompositionRoot {
 			appStateStore.insert(tour: tour)
 		})
 		
-		top5Tours.forEach({
-			appStateStore.insert(tour: $0)
-		})
-		
+		let top5TourIDs = top5Tours.map(\.id)
+		appStateStore.set(top5TourIDs: top5TourIDs)
 		
 		return CompositionRootResult(mainPagesCreator: mainPagesCreator)
 	}
