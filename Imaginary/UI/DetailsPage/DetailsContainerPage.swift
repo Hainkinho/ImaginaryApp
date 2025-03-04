@@ -21,6 +21,7 @@ struct DetailsContainerPage: View {
 			showcaseImageURL: vm.tourDetails?.fullResImageURL ?? vm.tour.snapshotImageURL,
 			title: vm.tour.title,
 			description: vm.tourDetails?.longDescription ?? vm.tour.shortDescription,
+			localizedPrice: vm.tour.localizedPrice,
 			startDate: vm.tour.startDate,
 			endDate: vm.tour.endDate,
 			tappedCallToActionButton: {

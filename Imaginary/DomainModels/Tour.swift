@@ -26,6 +26,19 @@ struct Tour: Identifiable, Equatable {
 	let startDate: Date
 	let endDate: Date
 	let price: Decimal
+	
+	private static let priceFormatter: NumberFormatter = {
+		let numberFormatter = NumberFormatter()
+		numberFormatter.numberStyle = .currency
+		numberFormatter.currencyCode = "USD"
+		numberFormatter.locale = Locale(identifier: "en_US")
+		return numberFormatter
+	}()
+	
+	
+	var localizedPrice: String {
+		return Self.priceFormatter.string(from: price as NSNumber) ?? price.description
+	}
 }
 
 

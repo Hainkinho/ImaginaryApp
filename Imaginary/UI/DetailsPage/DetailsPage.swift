@@ -15,6 +15,7 @@ struct DetailsPage: View {
 	let showcaseImageURL: URL
 	let title: String
 	let description: String
+	let localizedPrice: String
 	let startDate: Date
 	let endDate: Date
 	
@@ -59,6 +60,9 @@ struct DetailsPage: View {
 						.fontWeight(.bold)
 					
 					Text(dateRangeText)
+					
+					Text("PRICE: \(localizedPrice)", comment: "Price text - DetailsPage")
+						.fontWeight(.bold)
 				}
 				.frame(maxWidth: .infinity, alignment: .leading)
 				.padding(.vertical, 40)
@@ -104,6 +108,7 @@ struct DetailsPage: View {
 		showcaseImageURL: URL.placeholderImageURL,
 		title: "Title",
 		description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
+		localizedPrice: "9.99$",
 		startDate: .now.addingTimeInterval(-1000),
 		endDate: .now,
 		tappedCallToActionButton: {}

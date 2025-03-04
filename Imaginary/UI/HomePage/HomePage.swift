@@ -69,7 +69,7 @@ struct HomePage: View {
 								description: tour.shortDescription,
 								imageURL: tour.snapshotImageURL,
 								endDate: tour.endDate,
-								localizedPrice: tour.price.description // TODO:
+								localizedPrice: tour.localizedPrice
 							)
 						}
 					case .Button(let action):
@@ -81,7 +81,7 @@ struct HomePage: View {
 								description: tour.shortDescription,
 								imageURL: tour.snapshotImageURL,
 								endDate: tour.endDate,
-								localizedPrice: tour.price.description // TODO:
+								localizedPrice: tour.localizedPrice
 							)
 						}
 					}
